@@ -104,7 +104,6 @@ export default {
       }
     },
     changeClass() {
-      console.log(this.calculateChange());
       if (this.calculateChange() > 0) {
         return "rise";
       } else {
