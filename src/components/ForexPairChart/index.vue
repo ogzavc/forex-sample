@@ -89,7 +89,7 @@ export default {
     calculateChange() {
       const rawData = store.getters.getChartData;
       if (rawData.length > 0) {
-        return (rawData[0].close - rawData[rawData.length - 1].close).toFixed(
+        return (rawData[rawData.length - 1].close - rawData[0].close).toFixed(
           6
         );
       }
@@ -99,11 +99,12 @@ export default {
       if (rawData.length > 0) {
         //using math absolute to calculate first and last value's percentage difference
         return Math.abs(
-          (1 - rawData[0].close / rawData[rawData.length - 1].close) * 100
+          (1 - rawData[rawData.length - 1].close / rawData[0].close) * 100
         ).toFixed(6);
       }
     },
     changeClass() {
+      console.log(this.calculateChange());
       if (this.calculateChange() > 0) {
         return "rise";
       } else {
