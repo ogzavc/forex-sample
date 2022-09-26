@@ -66,7 +66,7 @@ const globalMixin = {
           .utc()
           .format(intervalProps.timeFormat) +
         "&end_date=" +
-        moment(moment().valueOf() - this.timerangeAsMiliseconds(1))
+        moment(moment().valueOf() - this.timerangeAsMiliseconds(10)) //sometimes server time is running behind. So, we are checking data from 10 minutes ago for onyl chart.
           .utc()
           .format(intervalProps.timeFormat)
       );

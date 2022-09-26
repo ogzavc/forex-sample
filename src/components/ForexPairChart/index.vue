@@ -21,7 +21,7 @@
       </div>
 
       <div class="exchange-difference" :class="changeClass()">
-        {{ calculateChange() }} ({{ calculateChangePercent() }}%)
+        {{ calculateChange() }} ({{ calculateChangePercent() }} %)
       </div>
     </div>
 
@@ -104,10 +104,13 @@ export default {
       }
     },
     changeClass() {
-      if (this.calculateChange() > 0) {
-        return "rise";
-      } else {
-        return "fall";
+      const range = this.calculateChange();
+      if (range) {
+        if (range > 0) {
+          return "rise";
+        } else {
+          return "fall";
+        }
       }
     },
   },
