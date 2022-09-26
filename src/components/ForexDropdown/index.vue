@@ -16,12 +16,10 @@
 </template>
 
 <script>
-import store from "../../store";
-import globalMixin from "@/mixins/globalMixin";
+import store from "@/store";
 
 export default {
   name: "ForexDropdown",
-  mixins: [globalMixin],
   props: { defaultVal: String },
   data: function () {
     return {

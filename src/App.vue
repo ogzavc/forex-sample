@@ -29,14 +29,12 @@
 </template>
 
 <script>
-import store from "./store";
-import ForexDropdown from "./components/ForexDropdown";
-import ForexPairChart from "./components/ForexPairChart";
-import globalMixin from "@/mixins/globalMixin";
+import store from "@/store";
+import ForexDropdown from "@/components/ForexDropdown";
+import ForexPairChart from "@/components/ForexPairChart";
 
 export default {
   name: "App",
-  mixins: [globalMixin],
   components: {
     ForexDropdown,
     ForexPairChart,

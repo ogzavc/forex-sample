@@ -49,12 +49,10 @@
 </template>
 
 <script>
-import store from "../../store";
-import globalMixin from "@/mixins/globalMixin";
+import store from "@/store";
 
 export default {
   name: "ForexPairChart",
-  mixins: [globalMixin],
   computed: {
     firstValOfPair() {
       return store.getters.getFirstValOfPair;
